@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: "Noto Sans CJK KR";
+}
+
+.TopMenu {
+    margin-top: 60px;
+    position: fixed;
+    height: 40px;
+    width: 100%;
+}
+
+.TopMenu #menu {
+    width: 70%;
+    margin: auto;
+}
+
+.TopMenu ul li {
+    list-style: none;
+    line-height: 40px;
+    color: rgb(0, 0, 0);
+    background-color: none;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.TopMenu .menuLink {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: block;
+    padding-right: 30px;
+    font-size: 15px;
+}
+
+.TopMenu .menuLink:hover {
+    color: rgb(124, 124, 124);
+    background-color: none;
+}
+
+.losi {
+    text-align: right;
+}
+
+.menu1 {
+    float: left;
+    width: 80%;
+    text-align: left;
+}
+
+.losi1 {
+    float: right;
+    width: 120px;
+    text-align: left;
+}
+
+#bane {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.ETbtn {
+    width: 50%;
+    margin: auto;
+}
+
+.ETbtn #ETbtn1 {
+    border: 0;
+    background: none;
+    width: 200px;
+    height: 100px;
+    text-align: left;
+    font-size: 50px;
+}

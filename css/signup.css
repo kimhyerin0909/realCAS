@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: auto;
+    width: 300px;
+    font-family: "Noto Sans CJK KR";
+}
+
+.form {
+    margin-top: 40px;
+}
+
+#email, #password, #full-name {
+    height: 30px;
+    width: 100%;
+    border: none;
+    background-color: rgb(218, 218, 218);
+}
+
+.button button {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border: none;
+    height: 40px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    box-shadow: 1px 1px 10px rgb(107, 107, 107);
+}
+
+input {
+    padding: 5px;
+}
