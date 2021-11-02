@@ -36,8 +36,14 @@
         $query_result = mysqli_query($db, "select * from errors where error_code='".$name."'");
         $result = mysqli_fetch_array($query_result);
 
-        echo ("번역 : '".$result['error_tran']."'");
-        echo ("해결 : '".$result['error_solve']."'");
+        if($result) {
+            echo ("번역 : '".$result['error_tran']."'");
+            echo ("해결 : '".$result['error_solve']."'");
+        }
+        else {
+            echo '<script language=javascript> alert("데이터가 없습니다."); location.href="translate.php";</script>';
+
+        }
         ?>
     </div>
 </body>
