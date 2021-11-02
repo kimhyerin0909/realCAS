@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,6 +10,7 @@
     <title>Translate</title>
 </head>
 <body>
+
     <div class="TopMenu">
         <nav id="menu">
             <ul>
@@ -30,12 +33,10 @@
             </h1>
         </div>
         <div class="inputu">
-            <form class="input" name="input">
-                <textarea name="code" rows="10" cols="100%" placeholder="오류 코드를 입력하세요."></textarea>
+            <form action="posttest.php" class="input" name="input" method="POST">
+                <input type="text" name="code" rows="10" cols="100%" placeholder="오류 코드를 입력하세요."></input>
+                <button name="nextBtn" type="submit" id="nextBtn">Next</button>
             </form>
-            <div class="nextBtn">
-                <button type="submit" onclick="location.href='main.html'" id="nextBtn">Next</button>
-            </div>
         </div>
     </div>
 </body>
