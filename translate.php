@@ -20,7 +20,7 @@
                 </div>
                 <div class="losi1">
                     <li><a class="losi" href="login.html">로그인</a></li>
-                    <li><a class="losi" href="signup.html">회원가입</a></li>
+                    <li><a class="losi" href="signup.php">회원가입</a></li>
                 </div>
             </ul>
         </nav>
