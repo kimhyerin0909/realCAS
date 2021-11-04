@@ -3,24 +3,27 @@ session_start();
 $cas_conn = mysqli_connect("localhost", "root", "1234", "user_info", "3306");
 $username = $_POST['username'];
 $password = $_POST['password'];
-//$password_confirm = $_POST['password_confirm'];
+$password_confirm = $_POST['password_confirm'];
 
 if(!is_null($username)) {
     $cas_sql = "SELECT username FROM users WHERE username = '$username';";
     $cas_result = mysqli_query($cas_conn, $cas_sql );
     while($cas_row = mysqli_fetch_array($cas_result)) {
         $username_e = $cas_row['username'];
+
+
     }
     if($username === $username_e) {
         $wu = 1;
     } elseif ($password != $password_confirm) {
         $wp = 1;
     } else {
-        $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
-        $cas_sql_add_user = "INSERT INTO users (username, password) VALUES ('$username', '$encrypted_password');";
+        //$encrypted_password = password_hash($password, PASSWORD_DEFAULT);
+        $cas_sql_add_user = "INSERT INTO user_info.users (username, password) VALUES ('$username', '$password')";
+        echo ($encrypted_password);
 
         mysqli_query( $cas_conn, $cas_sql_add_user );
-        echo '<script>location.href="signup_ok.php";</script>';
+        //echo '<script>location.href="signup_ok.php";</script>';
     }
 }
 ?>
