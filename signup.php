@@ -17,7 +17,7 @@ if(!is_null($username)) {
     } elseif ($password != $password_confirm) {
         $wp = 1;
     } else {
-        $encrypted_password = password_hash($password, PASSWORD_DEFAULT); //특수문자 포함해서 비밀번호 암호화 -> DB에 특수문자 안 들어갈수도
+        //$encrypted_password = password_hash($password, PASSWORD_DEFAULT); //특수문자 포함해서 비밀번호 암호화 -> DB에 특수문자 안 들어갈수도
         $cas_sql_add_user = "INSERT INTO user_info.users (username, useremail, password) VALUES ('$username', '$useremail', '$password')";
 
         mysqli_query( $cas_conn, $cas_sql_add_user );
