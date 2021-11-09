@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -19,4 +19,40 @@
         </form>
     </div>
 </body>
-</html>
+</html> -->
+<!doctype HTML>
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="../css/login.css">
+	<script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="main-container">
+		<div class="main-wrap">
+		<header>
+			<div class="logo-wrap">
+				<img src="img/logo.png">
+			</div>
+		</header>
+		<section class="login-input-section-wrap">
+        <form action="loginProcess.php" method="POST">
+			<div class="login-input-wrap">
+				<input name="useremail" placeholder="이메일을 입력하세요." type="text"></input>
+			</div>
+			<div class="login-input-wrap password-wrap">	
+				<input name="password" placeholder="비밀번호를 입력하세요." type="password"></input>
+			</div>
+            
+			<div class="login-button-wrap">
+				<button type="submit" name="loginBtn">로그인</button>
+			</div>
+        </form>
+		</section>
+		<section class="Easy-sgin-in-wrap">
+			
+			<p class="forget-msg">비밀번호를 잊어버렸나요? | 회원가입</p>
+		</section>
+		</div>
+	</div>
+</body>

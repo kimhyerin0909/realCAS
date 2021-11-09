@@ -19,14 +19,14 @@ if ($password === $db_pwd) {
     echo $_SESSION['userEmail'];
     echo '<script>
         alert("로그인에 성공하였습니다.")
-        location.href = "loginState.html";
+        location.href = "../html/loginState.html";
     </script>';
 } else {
     // 로그인 실패 
     echo '
     <script>
         alert("로그인에 실패하였습니다");
-        location.href = "login.html";
+        location.href = "../html/login.html";
     </script>
     ';
     
