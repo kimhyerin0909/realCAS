@@ -36,7 +36,7 @@
             $query_result = mysqli_query($db, "select * from error_c where error_code='".$name."'");
             $result = mysqli_fetch_array($query_result);
             if($result) {
-                echo ("해결 : '".$result['error_cause']."'");
+                echo ("해결 방법 : ".$result['error_cause']."");
             }
             else {
             echo '<script language=javascript> alert("데이터가 없습니다."); location.href="../html/translate.html";</script>';
