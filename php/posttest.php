@@ -30,19 +30,22 @@
         <?php
         session_start();
         $db = mysqli_connect("localhost", "root", "1234", "error", "3306");
-
+        $lang = $_POST['language'];
         $name = $_POST['code'];
-
-        $query_result = mysqli_query($db, "select * from error_c where error_code='".$name."'");
-        $result = mysqli_fetch_array($query_result);
-
-        if($result) {
-            echo ("해결 : '".$result['error_cause']."'");
+        if($lang === 'C') {
+            $query_result = mysqli_query($db, "select * from error_c where error_code='".$name."'");
+            $result = mysqli_fetch_array($query_result);
+            if($result) {
+                echo ("해결 : '".$result['error_cause']."'");
+            }
+            else {
+            echo '<script language=javascript> alert("데이터가 없습니다."); location.href="../html/translate.html";</script>';
+            }
         }
         else {
-            echo '<script language=javascript> alert("데이터가 없습니다."); location.href="../html/translate.html";</script>';
-
+            echo '<script language=javascript> alert("C언어 이외에 데이터 추가 예정입니다. 죄송합니다."); location.href="../html/translate.html";</script>';
         }
+        
         ?>
     </div>
 </body>

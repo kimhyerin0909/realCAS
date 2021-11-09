@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/translate.css">
+    <link rel="stylesheet" href="../css/translate.css">
     <title>Translate</title>
 </head>
 <body>
@@ -32,6 +32,11 @@
         </div>
         <div class="inputu">
             <form action="../php/posttest.php" class="input" name="input" method="POST">
+                <select name="language">
+                    <option value="C">C</option>
+                    <option value="JAVA">JAVA</option>
+                    <option value="PYTHON">PYTHON</option>
+                </select>
                 <input type="text" name="code" rows="10" cols="100%" placeholder="오류 코드를 입력하세요."></input>
                 <button name="nextBtn" type="submit" id="nextBtn">Next</button>
             </form>
