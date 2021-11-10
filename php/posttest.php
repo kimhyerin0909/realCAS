@@ -35,6 +35,7 @@
         if($lang === 'C') {
             $query_result = mysqli_query($db, "select * from error_c where error_code='".$name."'");
             $result = mysqli_fetch_array($query_result);
+            
             if($result) {
                 echo ("해결 방법 : ".$result['error_cause']."");
             }
