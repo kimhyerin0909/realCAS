@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="image/x-icon" href="../browser-20_icon-icons.com_62178.ico" />
+    <title>Translate</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">ErrorTalkTalk</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../html/loginState.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../html/translateLogin.html">Translate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../html/qnaLogin.html">Board</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Q&A</a></li>
+                    </ul>
+
+                    <ul class="user">
+                        <li class= "user01"><a class="nav-link active" aria-current="page" href="../html/login.html">Login</a></li>
+                        <li class= "user01"><a class="nav-link active" aria-current="page" href="signup.php">SignUp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="title">
+            <h1>
+                오류 메세지를 입력하세요.
+            </h1>
+        </div>
+        <div class="inputu">
+            <form action="../php/posttest.php" class="input" name="input" method="POST">
+                <select name="language">
+                    <option value="C">C</option>
+                    <option value="JAVA">JAVA</option>
+                    <option value="PYTHON">PYTHON</option>
+                </select>
+                <input type="text" name="code" rows="10" cols="100%" placeholder="오류 코드를 입력하세요."></input>
+                <button name="nextBtn" type="submit" id="nextBtn">Next</button>
+            </form>
+        </div>
+</body>
+</html>

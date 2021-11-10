@@ -16,13 +16,13 @@ $row['useremail'];
 if ($password === $db_pwd) { // 로그인 성공
     // 세션에 useremail 저장
     session_start();
-    $_SESSION['useremail'] = $row['useremail'];
-    print_r($_SESSION);  //Array ( [userEmail] => )
-    echo ($_SESSION['useremail']);
-    // echo '<script>
-    //     alert("로그인에 성공하였습니다.")
-    //     location.href = "../html/loginState.html";
-    // </script>';
+    $_SESSION['useremail'] = $useremail;
+    // print_r($_SESSION);  //Array ( [userEmail] => )
+    // echo ($_SESSION['useremail']);
+    echo '<script>
+        alert("로그인에 성공하였습니다.")
+        location.href = "../html/loginState.html";
+    </script>';
 } else {
     // 로그인 실패 
     echo '
