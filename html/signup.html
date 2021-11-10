@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="icon" type="image/x-icon" href="../browser-20_icon-icons.com_62178.ico" />
+    <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body>
+<!-- 상단 -->
+<div id= "wrap">
+    <div class= "top">
+        <div class= "top_in">
+
+        </div>
+    </div>
+
+    <div id= "wrap">
+    <div class="form">
+        <form class="form-row" method="POST" action="../php/signup.php">
+            <!--<div class= "id">
+                <div for="full-name">아이디</div>
+                <input id="full-name" name="full-name" type="text" placeholder=" 아이디를 입력해주세요.";>
+            </div><br>-->
+            <div>
+                <div for="full-name">닉네임</div>
+                <input type="text" id="full-name" name="username" placeholder="닉네임을 입력해주세요.">
+            </div><br>
+            <div class= "email">
+                <div for="email">Email</div>
+                <input id="email" name="useremail" type="email" placeholder=" 이메일을 입력해주세요.">
+            </div><br>
+            <div class= "password">
+                <div for="password">비밀번호</div>
+                <input type="password" id="password" name="password" placeholder=" 비밀번호를 입력해주세요">
+            </div><br>
+            <div>
+                <div for="password">비밀번호 재확인</div>
+                <input type="password" id="password" name="password_confirm" placeholder=" 비밀번호 재확인">
+            </div><br>
+              
+            <!-- <div class="birth">
+                <div for="birth">생년월일</div>
+                <div class= "year">
+                <input type="password" id="year" name="year">
+                </div>
+                <div class= "month">
+                    <select name="month">
+                        <option value="">월</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class= "day">
+                <input type="password" id="day" name="day">
+                </div>
+            </div> -->
+            <!--  -->
+            
+            <div class="button">
+                <button type="submit">SignUp</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</body>
+</html>

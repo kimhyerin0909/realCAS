@@ -21,12 +21,20 @@ if(!is_null($username)) {
         $cas_sql_add_user = "INSERT INTO user_info.users (username, useremail, password) VALUES ('$username', '$useremail', '$password')";
 
         mysqli_query( $cas_conn, $cas_sql_add_user );
-        //echo '<script>location.href="signup_ok.php";</script>';
+        echo '<script>location.href="signup_ok.php";</script>';
     }
 }
 ?>
+<?php
+if ( $wu == 1 ) {
+    echo "<p>이미 가입된 계정입니다.</p>";
+}
+if ( $wp == 1 ) {
+    echo "<p>비밀번호가 일치하지 않습니다.</p>";
+}
+?>
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -46,14 +54,7 @@ if(!is_null($username)) {
             <input type="password" name="password" placeholder="비밀번호를 입력하세요.">
             <input type="password" name="password_confirm" placeholder="비밀번호 확인">
             <button type="submit">Signup</button>
-            <?php
-            if ( $wu == 1 ) {
-            echo "<p>이미 가입된 계정입니다.</p>";
-            }
-            if ( $wp == 1 ) {
-            echo "<p>비밀번호가 일치하지 않습니다.</p>";
-            }
-            ?>
+            
         </form>
     </div>
 </body>
