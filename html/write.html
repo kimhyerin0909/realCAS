@@ -1,49 +1,47 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../browser-20_icon-icons.com_62178.ico" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QnA</title>
-    <link rel="icon" type="image/x-icon" href="../browser-20_icon-icons.com_62178.ico" />
-    <link rel="stylesheet" href="../css/main.css">
+    <title>글 작성</title>
 </head>
 <body>
-    <div class="TopMenu">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#!">ErrorTalkTalk</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link " aria-current="page" href="../html/loginState.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../html/loginState.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../html/translateLogin.html">Translate</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="../html/qnaLogin.html">Board</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../html/qnaLogin.html">Board</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Q&A</a></li>
                     </ul>
 
                     <ul class="user">
                         <li class= "user01"><a class="nav-link active" aria-current="page" href="../php/logout.php">Logout</a></li>
                     </ul>
-                    
                 </div>
             </div>
-        </nav>>
         </nav>
-        <br>
+    <form action="writeAction.php" method="GET">
         <table>
-            <thead>
-                <tr>
-                    <td>번호</td>
-                    <td>제목</td>
-                    <td>작성자</td>
-                    <td>날짜</td>
-                    <td>조회수</td>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
+            <tr>
+                <td>작성자</td>
+                <td><input type="text" name="name" size="20"></td>
+            </tr>
+            <tr>
+                <td>제목</td>
+                <td><input type="text" name="title" size="60"></td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td><textarea name="content" cols="85" rows="15"></textarea></td>
+            </tr>
+            <input type="submit" value="작성하기">
         </table>
+    </form>
 </body>
 </html>
