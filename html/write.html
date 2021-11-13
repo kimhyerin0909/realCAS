@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="../browser-20_icon-icons.com_62178.ico" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
     <title>글 작성</title>
 </head>
 <body>
@@ -26,22 +27,24 @@
                 </div>
             </div>
         </nav>
+        <h1 style="margin: 20px; text-align:center;">글 작성하기</h1>
     <form action="writeAction.php" method="GET">
-        <table>
+        <table class="table" style="width: 60vw; margin:auto;">
             <tr>
-                <td>작성자</td>
-                <td><input type="text" name="name" size="20"></td>
-            </tr>
-            <tr>
-                <td>제목</td>
+                <th>제목</th>
                 <td><input type="text" name="title" size="60"></td>
+                <th>언어</th>
+                <td><select name="language" id="language"></select></td>
             </tr>
             <tr>
-                <td>내용</td>
-                <td><textarea name="content" cols="85" rows="15"></textarea></td>
+                <th>내용</th>
+                <td><textarea name="content" cols="70" rows="10"></textarea></td>
             </tr>
-            <input type="submit" value="작성하기">
         </table>
+        <div class="btns" style="width: 100px; margin:auto; margin-top:20px;">
+            <input class="btn btn-primary" type="submit" value="작성하기">
+        </div>
+        
     </form>
 </body>
 </html>
