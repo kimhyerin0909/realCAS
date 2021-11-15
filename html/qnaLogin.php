@@ -31,6 +31,12 @@
         </nav>
         </nav>
         <br>
+        <?php
+        $db = mysqli_connect("localhost", "root", "1234", "board", "3306");
+        $query = "select * from board order by number desc";
+        $result = $db->query($query);
+        $total = mysqli_num_rows($result);
+        ?>
         <h1 style="text-align:center; margin:20px;">Board</h1>
         <div class="write" style="width:60vw; margin:auto; text-align:right;">
             <button type="button" class="btn btn-primary" style="margin-bottom:15px;" onclick="location.href='write.html' ">글 작성하기</button>
@@ -41,22 +47,38 @@
                     <th scope="col">번호</th>
                     <th scope="col">언어</th>
                     <th scope="col">제목</th>
-                    <th scope="col">작성자</th>
+                    <th scope="col">작성일</th>
                     <th scope="col">조회수</th>
                 </tr>
             </thead>
+            <?php
+    header('Content-Type: text/html; charset=utf-8');
+    $db = mysqli_connect("localhost", "root", "1234", "board", "3306");
+    $db->set_charset("utf8");
+    function mq($sql) {
+        global $db;
+        return $db->query($sql);
+    }
+    $sql = mq("select * from board order by number desc limit 0,5");
+    while($board = $sql->fetch_array()) {
+        $title = $board["title"];
+        if(strlen($title)>30) {
+            $title=str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8")."...", $board["title"]);
+        }
+        ?>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>C</td>
-                    <td>for문에서 뭐가 잘 못 된 걸까요..?</td>
-                    <td>코딩짱</td>
-                    <td>12</td>
+                    <td><?php echo $board['number'];?></td>
+                    <td><?php echo $board['language'];?></td>
+                    <td><?php echo $board['title'];?></td>
+                    <td><?php echo $board['date'];?></td>
+                    <td><?php echo $board['hit'];?></td>
                 </tr>
+             <?php } ?>   
             </tbody>
         </table>
         <div class="btns" style="text-align:center;">
             <button type="button" class="btn btn-outline-secondary btn-sm" style="margin-top:15px;">더보기</button>
         </div>
-</body>
+    </body>
 </html>
