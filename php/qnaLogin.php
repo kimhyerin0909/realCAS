@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <div class="TopMenu">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#!">ErrorTalkTalk</a>
@@ -29,7 +28,6 @@
                 </div>
             </div>
         </nav>
-        </nav>
         <br>
         <?php
         $db = mysqli_connect("localhost", "root", "1234", "board", "3306");
@@ -39,7 +37,7 @@
         ?>
         <h1 style="text-align:center; margin:20px;">Board</h1>
         <div class="write" style="width:60vw; margin:auto; text-align:right;">
-            <button type="button" class="btn btn-primary" style="margin-bottom:15px;" onclick="location.href='write.html' ">글 작성하기</button>
+            <button type="button" class="btn btn-primary" style="margin-bottom:15px;" onclick="location.href='../html/write.html' ">글 작성하기</button>
         </div>
         <table class="table" style="width: 60vw; margin:auto;">
             <thead class="thead-light">
@@ -68,7 +66,7 @@
         ?>
             <tbody>
                 <tr>
-                    <td><?php echo $board['number'];?></td>
+                    <td><a href="../php/read.php?number=<?php echo $board["number"];?>"><?php echo $board['number'];?></td>
                     <td><?php echo $board['language'];?></td>
                     <td><?php echo $board['title'];?></td>
                     <td><?php echo $board['date'];?></td>
