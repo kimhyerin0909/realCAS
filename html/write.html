@@ -28,13 +28,20 @@
             </div>
         </nav>
         <h1 style="margin: 20px; text-align:center;">글 작성하기</h1>
-    <form action="writeAction.php" method="GET">
+    <form action="write_action.php" method="GET">
         <table class="table" style="width: 60vw; margin:auto;">
             <tr>
                 <th>제목</th>
                 <td><input type="text" name="title" size="60"></td>
+            </tr>
+            <tr>
                 <th>언어</th>
-                <td><select name="language" id="language"></select></td>
+                <td><select name="language" id="language">
+                    <option value="C">C</option>
+                    <option value="JAVA">JAVA</option>
+                    <option value="PYTHON">PYTHON</option>
+                    <option value="그 외">그 외</option>
+                </select></td>
             </tr>
             <tr>
                 <th>내용</th>

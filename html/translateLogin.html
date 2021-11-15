@@ -28,19 +28,21 @@
             </div>
         </nav>
         <div class="title">
-            <h1>
+            <h1 style="text-align: center; margin:30px;">
                 오류 메세지를 입력하세요.
             </h1>
         </div>
         <div class="inputu">
-            <form action="../php/posttest.php" class="input" name="input" method="POST">
-                <select name="language">
+            <form action="../php/echo.php" class="input" style="width: 60vw; margin:auto; text-align:center;" name="input" method="POST">
+                <select class="form-select" name="language" aria-label="Default select example" style="width: 188px; margin:auto; margin-bottom:20px;">
+                    <option selected>언어를 선택하세요.</option>
                     <option value="C">C</option>
                     <option value="JAVA">JAVA</option>
                     <option value="PYTHON">PYTHON</option>
                 </select>
-                <input type="text" name="code" rows="10" cols="100%" placeholder="오류 코드를 입력하세요."></input>
-                <button name="nextBtn" type="submit" id="nextBtn">Next</button>
+                <input class="form-control form-control-lg" type="text" name="code" rows="10" cols="100%" placeholder="오류 코드를 입력하세요."></input>
+                <br>
+                <button class="btn btn-outline-success" name="nextBtn" type="submit" id="nextBtn">Next</button>
             </form>
         </div>
 </body>
