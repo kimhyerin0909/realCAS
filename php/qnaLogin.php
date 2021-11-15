@@ -31,7 +31,7 @@
         <br>
         <?php
         $db = mysqli_connect("localhost", "root", "1234", "board", "3306");
-        $query = "select * from board order by number desc";
+        $query = "select * from board order by idx desc";
         $result = $db->query($query);
         $total = mysqli_num_rows($result);
         ?>
@@ -57,7 +57,7 @@
         global $db;
         return $db->query($sql);
     }
-    $sql = mq("select * from board order by number desc limit 0,5");
+    $sql = mq("select * from board order by idx desc limit 0,10");
     while($board = $sql->fetch_array()) {
         $title = $board["title"];
         if(strlen($title)>30) {
@@ -66,7 +66,7 @@
         ?>
             <tbody>
                 <tr>
-                    <td><a href="../php/read.php?number=<?php echo $board["number"];?>"><?php echo $board['number'];?></td>
+                    <td><a href="../php/read.php?idx=<?php echo $board["idx"];?>"><?php echo $board['idx'];?></td>
                     <td><?php echo $board['language'];?></td>
                     <td><?php echo $board['title'];?></td>
                     <td><?php echo $board['date'];?></td>
