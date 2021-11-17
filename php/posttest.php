@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <title>Translate</title>
+    <link rel="icon" type="image/x-icon" href="browser-20_icon-icons.com_62178.ico" />
 </head>
 <body>
 
@@ -30,6 +31,7 @@
         </nav>
         <br>
         <br>
+        <h1 style="text-align: center; margin-top:10%; margin-bottom:30px;">오류 발생 이유는...</h1>
         <?php
         session_start();
         $db = mysqli_connect("localhost", "root", "1234", "error", "3306");
@@ -39,9 +41,10 @@
             $query_result = mysqli_query($db, "select * from error_c where error_code='".$name."'");
             $result = mysqli_fetch_array($query_result);
             
-            if($result) {
-                echo ("해결 방법 : ".$result['error_cause']."");
-            }
+            if($result) {?>
+        
+        <p style="text-align:center;"><?php echo ("".$result['error_cause']."입니다."); ?>.</p>
+        <?php    }
             else {
             echo '<script language=javascript> alert("데이터가 없습니다."); location.href="../html/translate.html";</script>';
             }
@@ -49,7 +52,6 @@
         else {
             echo '<script language=javascript> alert("C언어 이외에 데이터 추가 예정입니다. 죄송합니다."); location.href="../html/translate.html";</script>';
         }
-        
         ?>
     </div>
 </body>

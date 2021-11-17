@@ -9,6 +9,7 @@ include $_SERVER['DOCUMENT_ROOT']."../php/db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>글</title>
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="image/x-icon" href="browser-20_icon-icons.com_62178.ico" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
