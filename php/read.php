@@ -97,7 +97,7 @@ include $_SERVER['DOCUMENT_ROOT']."../php/db.php";
 			<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호"> -->
 			<div style="margin-top:10px; ">
 				<textarea name="content" class="reply_content" id="re_content" ></textarea>
-				<button id="rep_bt" class="re_bt">댓글</button>
+				<button id="rep_bt" class="re_bt" type="submit">작성</button>
 			</div>
 		</form>
 	</div>
