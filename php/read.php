@@ -38,7 +38,11 @@ include $_SERVER['DOCUMENT_ROOT']."../php/db.php";
         $fet = mq("update board set hit = '".$hit."' where idx = '".$bno."'");
         $sql = mq("select * from board where idx = '".$bno."'");
         $board = $sql->fetch_array();
+
+        $sql2 = mq("select * from dat where idx = '".$bno."'");
+        
     ?>
+    
     <div id="board_read">
         <h2><?php echo $board['title']?></h2>
         <div id="user_info">
@@ -58,19 +62,17 @@ include $_SERVER['DOCUMENT_ROOT']."../php/db.php";
     </div>
     <div class="wkrtjd">
         <form action="../php/reply_ok.php" method="POST">
-            <input type="text" name="content">
-            <button type="submit"></button>
+            <input type="hidden" name="text2" value="<?php echo $board['idx']; ?>">
+            <input type="text" name="text">
+            <button type="submit">작성</button>
         </form>
     </div>
-    <?php
-    $sql = mq("select * from reply order by idx desc limit 0,10");
-    $reply = $sql->fetch_array()
-    ?>
-    <div class="eotrmf">
-        <ul>
-            <li><?php echo $reply['content'] ?></li>
-        </ul>
+    <div class="comments">
+        <?php while($comment = $sql2->fetch_array()) {
+        ?>
+        <?php echo $comment['date']; ?>
+        <?php echo $comment['text']; ?>
+        <?php } ?>
     </div>
-</div>
 </body>
 </html>
