@@ -21,7 +21,7 @@ include $_SERVER['DOCUMENT_ROOT']."../php/db.php";
                         <li class="nav-item"><a class="nav-link " aria-current="page" href="../html/loginState.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../html/translateLogin.html">Translate</a></li>
                         <li class="nav-item"><a class="nav-link active" href="../php/qnaLogin.php">Board</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Q&A</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#!">Q&A</a></li> -->
                     </ul>
 
                     <ul class="user">
@@ -38,41 +38,45 @@ include $_SERVER['DOCUMENT_ROOT']."../php/db.php";
         $fet = mq("update board set hit = '".$hit."' where idx = '".$bno."'");
         $sql = mq("select * from board where idx = '".$bno."'");
         $board = $sql->fetch_array();
-
-        
-        
     ?>
     
-    <div id="board_read">
-        <h2><?php echo $board['title']?></h2>
+    <div style="text-align: left; width:60vw; margin:auto;" id="board_read">
+        <h2 style="margin-top: 10%;"><?php echo $board['title']?></h2>
         <div id="user_info">
             <?php echo $board['name']; ?>
             <?php echo $board['date']; ?>
-            조회 : <?php echo $board['hit']; ?>
+            조회 <?php echo $board['hit']; ?>
             <div id="bo_line"></div>
         </div>
-        <div id="bo_content">
+        <div style="margin-top:10px;" id="bo_content">
             <?php echo nl2br("$board[content]"); ?>
         </div>
-        <div id="bo_ser">
-		    <ul>
+        <!-- <div id="bo_ser">
+		    <ul style=" list-style: none;">
 			    <li><a href="../php/qnaLogin.php">[목록으로]</a></li>
 		    </ul>
-	    </div>
+	    </div> -->
     </div>
-    <div class="wkrtjd">
-        <form action="../php/reply_ok.php" method="POST">
-            <input type="hidden" name="text2" value="<?php echo $board['idx']; ?>">
-            <input type="text" name="text">
-            <button type="submit">작성</button>
-        </form>
+    <br>    
+        <hr style="width: 60vw; margin:auto;">
+    <div class="datInput" style="width: 60vw; margin:auto;">
+        <h5 style="margin-top:20px;">댓글 목록</h5>
+        <div class="wkrtjd">
+            <form action="../php/reply_ok.php" method="POST">
+                <input type="hidden" name="text2" value="<?php echo $board['idx']; ?>">
+                <input placeholder="댓글을 입력하세요." style="margin-bottom: 20px;" type="text" name="text">
+                <!-- <button class="btn btn-secondary" style="margin-bottom: 20px;" type="submit">작성</button> -->
+            </form>
+        </div>
     </div>
-    <div class="comments">
+    
+    <div class="comments" style="width:60vw; margin:auto;">
             <?php 
                 $sql2 = mq("select * from dat where boardNum='".$bno."' order by idx desc");
                 while($comment = $sql2->fetch_array()) { ?>
                 
-                <div><?php echo $comment['date']; echo ' '; echo nl2br("$comment[text]"); ?></div> <?php
+                <p ><span style="font-size:14px"><?php echo $comment['date'];?></span><br>
+                <?php echo nl2br("$comment[text]"); ?></p><hr style="width: 50%;"> <?php
                 }
             ?>
     </div>

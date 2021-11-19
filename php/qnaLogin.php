@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="../browser-20_icon-icons.com_62178.ico" />
     <link rel="stylesheet" href="../css/main.css">
 </head>
-<body>
+<body style="overflow-y: hidden">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#!">ErrorTalkTalk</a>
@@ -17,8 +17,8 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link " aria-current="page" href="../html/loginState.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../html/translateLogin.html">Translate</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="../html/qnaLogin.html">Board</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Q&A</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../php/qnaLogin.php">Board</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#!">Q&A</a></li> -->
                     </ul>
 
                     <ul class="user">
@@ -35,7 +35,7 @@
         $result = $db->query($query);
         $total = mysqli_num_rows($result);
         ?>
-        <h1 style="text-align:center; margin:20px;">Board</h1>
+        <h1 style="text-align:center; margin:15px;">Board</h1>
         <div class="write" style="width:60vw; margin:auto; text-align:right;">
             <button type="button" class="btn btn-primary" style="margin-bottom:15px;" onclick="location.href='../html/write.html' ">글 작성하기</button>
         </div>
@@ -57,7 +57,7 @@
         global $db;
         return $db->query($sql);
     }
-    $sql = mq("select * from board order by idx desc limit 0,10");
+    $sql = mq("select * from board order by idx desc limit 0,9");
     while($board = $sql->fetch_array()) {
         $title = $board["title"];
         if(strlen($title)>30) {
