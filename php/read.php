@@ -39,7 +39,7 @@ include $_SERVER['DOCUMENT_ROOT']."../php/db.php";
         $sql = mq("select * from board where idx = '".$bno."'");
         $board = $sql->fetch_array();
 
-        $sql2 = mq("select * from dat where idx = '".$bno."'");
+        
         
     ?>
     
@@ -68,11 +68,13 @@ include $_SERVER['DOCUMENT_ROOT']."../php/db.php";
         </form>
     </div>
     <div class="comments">
-        <?php while($comment = $sql2->fetch_array()) {
-        ?>
-        <?php echo $comment['date']; ?>
-        <?php echo $comment['text']; ?>
-        <?php } ?>
+            <?php 
+                $sql2 = mq("select * from dat where boardNum='".$bno."' order by idx desc");
+                while($comment = $sql2->fetch_array()) { ?>
+                
+                <div><?php echo $comment['date']; echo ' '; echo nl2br("$comment[text]"); ?></div> <?php
+                }
+            ?>
     </div>
 </body>
 </html>
